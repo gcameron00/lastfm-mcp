@@ -9,12 +9,12 @@ export const MARKETING_PAGE_HTML = `<!DOCTYPE html>
     <title>Last.fm MCP Server - Connect AI to Your Music</title>
     <meta name="description" content="Connect Claude and other AI assistants to your Last.fm listening data. Ask questions about your music history, discover new artists, analyze your taste.">
     <meta name="keywords" content="Last.fm, MCP, Model Context Protocol, Claude, AI, music, listening history">
-    <link rel="canonical" href="https://lastfm-mcp.com">
+    <link rel="canonical" href="https://lastfm-mcp.gcameron.com">
 
     <meta property="og:title" content="Last.fm MCP Server">
     <meta property="og:description" content="Connect AI to your Last.fm listening data. Ask questions about your music history.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lastfm-mcp.com">
+    <meta property="og:url" content="https://lastfm-mcp.gcameron.com">
     <meta property="og:image" content="https://file.elezea.com/lastfm-img.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@ export const MARKETING_PAGE_HTML = `<!DOCTYPE html>
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Cross-platform",
       "description": "Model Context Protocol server connecting AI assistants to Last.fm music data.",
-      "url": "https://lastfm-mcp.com",
+      "url": "https://lastfm-mcp.gcameron.com",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "license": "https://opensource.org/licenses/MIT"
     }
@@ -727,7 +727,7 @@ export const MARKETING_PAGE_HTML = `<!DOCTYPE html>
                             <li>Sign in to Last.fm when prompted</li>
                         </ol>
                         <div class="code-wrap">
-                            <code>https://lastfm-mcp.com/mcp</code>
+                            <code>https://lastfm-mcp.gcameron.com/mcp</code>
                             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         </div>
                     </div>
@@ -738,7 +738,7 @@ export const MARKETING_PAGE_HTML = `<!DOCTYPE html>
                             <code>{
   "mcpServers": {
     "lastfm": {
-      "serverUrl": "https://lastfm-mcp.com/mcp"
+      "serverUrl": "https://lastfm-mcp.gcameron.com/mcp"
     }
   }
 }</code>
@@ -749,7 +749,7 @@ export const MARKETING_PAGE_HTML = `<!DOCTYPE html>
                         <h3>Claude Code</h3>
                         <p>Run this command in your terminal:</p>
                         <div class="code-wrap">
-                            <code>claude mcp add --transport http lastfm https://lastfm-mcp.com/mcp</code>
+                            <code>claude mcp add --transport http lastfm https://lastfm-mcp.gcameron.com/mcp</code>
                             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         </div>
                     </div>
@@ -761,7 +761,7 @@ export const MARKETING_PAGE_HTML = `<!DOCTYPE html>
   "mcp": {
     "lastfm": {
       "type": "remote",
-      "url": "https://lastfm-mcp.com/mcp"
+      "url": "https://lastfm-mcp.gcameron.com/mcp"
     }
   }
 }</code>
@@ -775,7 +775,7 @@ export const MARKETING_PAGE_HTML = `<!DOCTYPE html>
                             <code>{
   "mcpServers": {
     "lastfm": {
-      "url": "https://lastfm-mcp.com/mcp"
+      "url": "https://lastfm-mcp.gcameron.com/mcp"
     }
   }
 }</code>
@@ -790,7 +790,7 @@ export const MARKETING_PAGE_HTML = `<!DOCTYPE html>
   "mcpServers": {
     "lastfm": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://lastfm-mcp.com/mcp"]
+      "args": ["-y", "mcp-remote", "https://lastfm-mcp.gcameron.com/mcp"]
     }
   }
 }</code>

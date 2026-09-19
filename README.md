@@ -9,13 +9,13 @@ Runs on Cloudflare Workers with OAuth 2.0 authentication. Public tools (track in
 ### Claude.ai / Claude Desktop
 
 1. Open **Settings** -> **Connectors** -> **Add Custom Connector**
-2. Enter `https://lastfm-mcp.com/mcp`
+2. Enter `https://lastfm-mcp.gcameron.com/mcp`
 3. Sign in to Last.fm when prompted
 
 ### Claude Code
 
 ```bash
-claude mcp add --transport http lastfm "https://lastfm-mcp.com/mcp"
+claude mcp add --transport http lastfm "https://lastfm-mcp.gcameron.com/mcp"
 ```
 
 ### Windsurf
@@ -26,7 +26,7 @@ Add to `~/.codeium/windsurf/mcp_config.json`:
 {
   "mcpServers": {
     "lastfm": {
-      "serverUrl": "https://lastfm-mcp.com/mcp"
+      "serverUrl": "https://lastfm-mcp.gcameron.com/mcp"
     }
   }
 }
@@ -41,7 +41,7 @@ For clients that don't support remote servers directly (Continue.dev, Zed, etc.)
   "mcpServers": {
     "lastfm": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://lastfm-mcp.com/mcp"]
+      "args": ["-y", "mcp-remote", "https://lastfm-mcp.gcameron.com/mcp"]
     }
   }
 }
@@ -50,7 +50,7 @@ For clients that don't support remote servers directly (Continue.dev, Zed, etc.)
 ### MCP Inspector
 
 ```bash
-npx @modelcontextprotocol/inspector https://lastfm-mcp.com/mcp
+npx @modelcontextprotocol/inspector https://lastfm-mcp.gcameron.com/mcp
 ```
 
 ## Authentication
@@ -138,7 +138,7 @@ lastfm://track/{artist}/{track}/similar  # Similar tracks
 ### Local setup
 
 ```bash
-git clone https://github.com/rianvdm/lastfm-mcp.git
+git clone https://github.com/gcameron00/lastfm-mcp.git
 cd lastfm-mcp
 npm install
 ```
@@ -162,17 +162,17 @@ npx @modelcontextprotocol/inspector http://localhost:8787/mcp
 
 ### Deployment
 
-Set production secrets (or run `npm run setup:prod`, which creates the KV namespaces and prompts for these):
+Create the three KV namespaces this Worker needs (`MCP_RL`, `MCP_SESSIONS`, `OAUTH_KV`) in your Cloudflare account and put their IDs in `wrangler.toml`, then set secrets:
 
 ```bash
-echo "your_api_key" | wrangler secret put LASTFM_API_KEY --env production
-echo "your_shared_secret" | wrangler secret put LASTFM_SHARED_SECRET --env production
+wrangler secret put LASTFM_API_KEY
+wrangler secret put LASTFM_SHARED_SECRET
 ```
 
 Deploy:
 
 ```bash
-npm run deploy:prod
+npm run deploy
 ```
 
 ### Testing

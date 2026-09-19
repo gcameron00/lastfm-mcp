@@ -21,11 +21,11 @@ import { buildRateLimitResponse, checkRateLimit, rateLimitKeyFromRequest } from 
  * Setting this option replaces the handler's defaults rather than extending
  * them, which is why localhost is listed explicitly. Host validation is left
  * to Cloudflare routing: the handler only checks Host on localhost and
- * workers.dev endpoints, and lastfm-mcp.com is configured in the dashboard,
+ * workers.dev endpoints, and lastfm-mcp.gcameron.com is configured in the dashboard,
  * not in wrangler.toml.
  */
 const MCP_HANDLER_OPTIONS: CreateMcpHandlerOptions = {
-	allowedOriginHostnames: ['lastfm-mcp.com', 'localhost', '127.0.0.1'],
+	allowedOriginHostnames: ['lastfm-mcp.gcameron.com', 'localhost', '127.0.0.1'],
 }
 
 /**
@@ -234,7 +234,7 @@ export default {
 				`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lastfm-mcp.com/</loc>
+    <loc>https://lastfm-mcp.gcameron.com/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -262,7 +262,7 @@ Disallow: /mcp
 Disallow: /authorize
 Disallow: /oauth
 
-Sitemap: https://lastfm-mcp.com/sitemap.xml`,
+Sitemap: https://lastfm-mcp.gcameron.com/sitemap.xml`,
 				{
 					status: 200,
 					headers: {

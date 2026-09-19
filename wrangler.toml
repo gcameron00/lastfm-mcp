@@ -6,36 +6,18 @@ compatibility_flags = ["global_fetch_strictly_public", "nodejs_compat"]
 [observability]
 enabled = true
 
-# Development environment (default)
 [[kv_namespaces]]
 binding = "MCP_RL"
-id = "b4caaaa688cc45d2a9a85fe67ba53bfc"
+id = "9cb8fade1e11421398e5b4d49d033e29"
 
 [[kv_namespaces]]
 binding = "MCP_SESSIONS"
-id = "a0bc40f523d54a6ab70fa947ac3daeaf"
+id = "ec6391f5cf10492c937eea63d6f8d9e4"
 
 [[kv_namespaces]]
 binding = "OAUTH_KV"
-id = "e04a5ec5441949ebb6e84281bf6598c3"
+id = "7a93c832e6384971805f7f29f34f18c6"
 
-# Production environment
-[env.production]
-name = "lastfm-mcp-prod"
-
-[[env.production.kv_namespaces]]
-binding = "MCP_RL"
-id = "bfc831cedceb4a08a6d997909c3899ce"
-
-[[env.production.kv_namespaces]]
-binding = "MCP_SESSIONS"
-id = "e45edcc5347e4b409169c1d0a9b2ed5d"
-
-[[env.production.kv_namespaces]]
-binding = "OAUTH_KV"
-id = "8c3a19a93165452b9ab0215bdb3daa71"
-
-# Secrets (set via wrangler secret put):
+# Secrets (set in the Cloudflare dashboard under Workers & Pages -> lastfm-mcp -> Settings -> Variables and Secrets):
 # - LASTFM_API_KEY
 # - LASTFM_SHARED_SECRET
-# - JWT_SECRET 
